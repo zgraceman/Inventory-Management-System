@@ -1,3 +1,12 @@
+# Ignore Visual Studio temporary files and cache
+.vs/
+
+# Ignore specific cache directories related to your project
+InventoryManagementSystem/xs/
+
+# Optionally, ignore other unwanted files such as user-specific prefs
+*.UserPrefs.xml
+
 # Ignore the build output and intermediate directories
 [Bb]in/
 [Oo]bj/

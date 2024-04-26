@@ -7,6 +7,9 @@ InventoryManagementSystem/xs/
 # Optionally, ignore other unwanted files such as user-specific prefs
 *.UserPrefs.xml
 
+# Ignore Visual Studio environment settings
+.InventoryManagementSystem/.vs/
+
 # Ignore the build output and intermediate directories
 [Bb]in/
 [Oo]bj/

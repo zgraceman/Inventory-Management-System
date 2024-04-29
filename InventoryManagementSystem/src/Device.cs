@@ -31,7 +31,7 @@ namespace InventoryManagementSystem
         /// This parameterless constructor is primarily used for serialization and deserialization processes
         /// that require a parameterless constructor.
         /// </remarks>
-        public Device() { }
+        public Device() { Type = "Device"; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Device"/> class with specified name, manufacturer, model, and price.
@@ -48,6 +48,7 @@ namespace InventoryManagementSystem
         {
             Manufacturer = manufacturer;
             Model = model;
+            Type = "Device";
         }
 
         /// <summary>

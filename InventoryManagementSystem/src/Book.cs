@@ -21,7 +21,7 @@ namespace InventoryManagementSystem
         /// <remarks>
         /// This parameterless constructor is used for serialization and deserialization processes.
         /// </remarks>
-        public Book() { }
+        public Book() { Type = "Book"; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Book"/> class with specified title, author, and price.
@@ -36,6 +36,7 @@ namespace InventoryManagementSystem
           : base(title, price)
         {
           Author = author;
+            Type = "Book";
         }
 
         /// <summary>

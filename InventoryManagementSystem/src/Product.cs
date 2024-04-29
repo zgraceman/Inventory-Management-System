@@ -14,7 +14,7 @@ namespace InventoryManagementSystem
     /// </remarks>
     [XmlInclude(typeof(Book))]
     [XmlInclude(typeof(Device))]
-    public class Product
+    public abstract class Product
     {
         /// <summary>
         /// Gets or sets the name of the product.
@@ -28,6 +28,8 @@ namespace InventoryManagementSystem
         /// <value>The price of the product.</value>
         public decimal Price { get; set; }
 
+        public string Type { get; protected set; }  // Discriminator
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Product"/> class.
         /// </summary>
@@ -35,7 +37,7 @@ namespace InventoryManagementSystem
         /// This parameterless constructor is used for serialization purposes
         /// and should not be removed.
         /// </remarks>
-        public Product() {}
+        protected Product() {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Product"/> class with a specified name and price.
@@ -45,7 +47,7 @@ namespace InventoryManagementSystem
         /// <remarks>
         /// This constructor allows for the creation of a product with predefined name and price.
         /// </remarks>
-        public Product(string name, decimal price)
+        protected Product(string name, decimal price)
         {
             Name = name;
             Price = price;
@@ -53,7 +55,7 @@ namespace InventoryManagementSystem
 
         public override string ToString()
         {
-            return $"Name: {Name}, Price: ${Price}";
+            return $"Type: {Type}, Name: {Name}, Price: ${Price}";
         }
     }
 }

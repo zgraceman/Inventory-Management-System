@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Xml.Serialization;
+using InventoryManagementSystem.src;
 
 namespace InventoryManagementSystem
 {
@@ -94,11 +95,15 @@ namespace InventoryManagementSystem
         /// <param name="filePath">The file path of the JSON file to be loaded.</param>
         public void LoadFromJson(string filePath)
         {
-            if (File.Exists(filePath))
+            var jsonString = File.ReadAllText(filePath);
+            // Create JsonSerializerSettings and use custom converter
+            JsonSerializerSettings settings = new JsonSerializerSettings
             {
-                var jsonString = File.ReadAllText(filePath);
-                products = JsonConvert.DeserializeObject<List<Product>>(jsonString);
-            }
+                Converters = new List<JsonConverter> { new ProductConverter() }
+            };
+            // Deserialize the JSON string using the specified settings
+            products = JsonConvert.DeserializeObject<List<Product>>(jsonString, settings);
+            Console.WriteLine("Inventory loaded from JSON.");
         }
 
         /// <summary>

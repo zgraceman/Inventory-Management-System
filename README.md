@@ -2,11 +2,12 @@
 
 ## Overview
 
-The Inventory Management System is a console-based application developed in C# to manage and track inventory across multiple office locations. It handles the storage, modification, and display of product details, including books and electronic devices. The system supports serialization for data persistence, allowing inventory data to be saved and loaded from JSON and XML formats.
+The Inventory Management System is a console-based application developed in C# to manage and track inventory across multiple office locations. It handles the storage, modification, and display of product details, including books and electronic devices. The system supports advanced serialization techniques for data persistence, allowing inventory data to be saved and loaded from JSON and XML formats, with special handling for polymorphic objects.
 
 ## Features
 
 - **Manage Inventory**: Add, display, and remove products from inventory.
+- **Advanced Serialization**: Utilize custom JSON converters to manage polymorphic deserialization, ensuring that product-specific attributes are maintained across sessions.
 - **Data Persistence**: Load and save inventory data in JSON and XML formats.
 - **Transfer Products**: Move products between different office inventories.
 - **Sample Data**: Predefined methods to add sample products to the inventory.
@@ -18,6 +19,7 @@ The Inventory Management System is a console-based application developed in C# t
 - `Inventory.cs`: Core logic for inventory management, including add, remove, display functions.
 - `Product.cs`: Base class for products, including common properties like name and price.
 - `Book.cs`, `Device.cs`: Derived classes from Product, representing specific types of products.
+- `ProductConverter.cs`: Custom JSON converter for handling polymorphic deserialization of products, ensuring that Book and Device types are correctly instantiated from JSON data.
 - `Office.cs`: Represents an office, managing its own inventory.
 - `InventoryManager.cs`: Facilitates operations on inventories such as loading, saving, and transferring items.
 - `Utility.cs`: Provides additional utility functions like currency conversion.

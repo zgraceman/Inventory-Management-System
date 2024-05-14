@@ -28,7 +28,7 @@ namespace InventoryManagementSystem
         /// <value>The price of the product.</value>
         public decimal Price { get; set; }
 
-        public string Type { get; protected set; }  // Discriminator
+        public string Type { get; set; }  // Discriminator
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Product"/> class.

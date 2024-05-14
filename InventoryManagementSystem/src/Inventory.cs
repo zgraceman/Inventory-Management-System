@@ -103,7 +103,6 @@ namespace InventoryManagementSystem
             };
             // Deserialize the JSON string using the specified settings
             products = JsonConvert.DeserializeObject<List<Product>>(jsonString, settings);
-            Console.WriteLine("Inventory loaded from JSON.");
         }
 
         /// <summary>

@@ -20,4 +20,18 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\Domain\" />
+    <None Remove="src\DataAccess\" />
+    <None Remove="src\Services\" />
+    <None Remove="src\Utilities\" />
+    <None Remove="src\Presentation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\Domain\" />
+    <Folder Include="src\DataAccess\" />
+    <Folder Include="src\Services\" />
+    <Folder Include="src\Utilities\" />
+    <Folder Include="src\Presentation\" />
+  </ItemGroup>
 </Project>

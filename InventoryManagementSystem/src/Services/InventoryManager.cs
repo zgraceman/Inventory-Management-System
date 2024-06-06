@@ -7,6 +7,7 @@ namespace InventoryManagementSystem
 	public class InventoryManager
 	{
         private Inventory inventory;
+        private InventoryDataAccess dataAccess;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InventoryManager"/> class with the specified inventory.
@@ -15,6 +16,7 @@ namespace InventoryManagementSystem
         public InventoryManager(Inventory inventory)
         {
             this.inventory = inventory;
+            this.dataAccess = new InventoryDataAccess();
         }
 
         /// <summary>
@@ -29,12 +31,12 @@ namespace InventoryManagementSystem
             string loadOption = Console.ReadLine();
             if (loadOption == "1")
             {
-                inventory.LoadFromJson(jsonPath);
+                dataAccess.LoadFromJson(jsonPath);
                 Console.WriteLine("Inventory loaded from JSON.");
             }
             else if (loadOption == "2")
             {
-                inventory.LoadFromXml(xmlPath);
+                dataAccess.LoadFromXml(xmlPath);
                 Console.WriteLine("Inventory loaded from XML.");
             }
             else
@@ -76,12 +78,12 @@ namespace InventoryManagementSystem
             string saveOption = Console.ReadLine();
             if (saveOption == "1")
             {
-                inventory.SaveToJson(jsonPath);
+                dataAccess.SaveToJson(jsonPath);
                 Console.WriteLine("Inventory saved to JSON.");
             }
             else if (saveOption == "2")
             {
-                inventory.SaveToXml(xmlPath);
+                dataAccess.SaveToXml(xmlPath);
                 Console.WriteLine("Inventory saved to XML.");
             }
             else

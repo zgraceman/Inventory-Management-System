@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace InventoryManagementSystem.src
+namespace InventoryManagementSystem
 {
     /// <summary>
     /// Custom JSON converter for handling different types of products during deserialization.

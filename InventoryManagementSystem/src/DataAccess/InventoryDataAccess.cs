@@ -2,20 +2,30 @@
 using Newtonsoft.Json;
 using System.Xml.Serialization;
 
-namespace InventoryManagementSystem.src.DataAccess
+namespace InventoryManagementSystem
 {
 	public class InventoryDataAccess
 	{
-		public InventoryDataAccess()
+
+        private List<Product> products;
+        private Dictionary<Type, string> productTypeNames;
+
+        public InventoryDataAccess()
 		{
-		}
+            products = new List<Product>();
+            productTypeNames = new Dictionary<Type, string>
+            {
+                { typeof(Book), "Books" },
+                { typeof(Device), "Devices" }
+            };
+        }
 
 
         /// <summary>
         /// Saves the current state of the inventory to a JSON file.
         /// </summary>
         /// <param name="filePath">The file path where the JSON file will be saved.</param>
-        public void SaveToJson(string filePath, List<Product> products)
+        public void SaveToJson(string filePath)
         {
             var jsonString = JsonConvert.SerializeObject(products, Formatting.Indented);
             File.WriteAllText(filePath, jsonString);
@@ -41,7 +51,7 @@ namespace InventoryManagementSystem.src.DataAccess
         /// Saves the current state of the inventory to an XML file.
         /// </summary>
         /// <param name="filePath">The file path where the XML file will be saved.</param>
-        public void SaveToXml(string filePath, List<Product> products)
+        public void SaveToXml(string filePath)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Product>));
             using (StreamWriter writer = new StreamWriter(filePath))

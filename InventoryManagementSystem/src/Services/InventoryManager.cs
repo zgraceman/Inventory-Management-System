@@ -26,17 +26,18 @@ namespace InventoryManagementSystem
         /// <param name="xmlPath">The file path for the XML file.</param>
         public void LoadInventory(string jsonPath, string xmlPath)
         {
-            // Provide option to choose between JSON or XML
             Console.Write("Load from (1) JSON or (2) XML? ");
             string loadOption = Console.ReadLine();
             if (loadOption == "1")
             {
-                dataAccess.LoadFromJson(jsonPath);
+                var loadedProducts = dataAccess.LoadFromJson(jsonPath);
+                inventory.SetProducts(loadedProducts);
                 Console.WriteLine("Inventory loaded from JSON.");
             }
             else if (loadOption == "2")
             {
-                dataAccess.LoadFromXml(xmlPath);
+                var loadedProducts = dataAccess.LoadFromXml(xmlPath);
+                inventory.SetProducts(loadedProducts);
                 Console.WriteLine("Inventory loaded from XML.");
             }
             else
@@ -73,17 +74,16 @@ namespace InventoryManagementSystem
         /// <param name="xmlPath">The file path for the XML file.</param>
         public void SaveInventory(string jsonPath, string xmlPath)
         {
-            // Provide option to choose between JSON or XML
             Console.Write("Save as (1) JSON or (2) XML? ");
             string saveOption = Console.ReadLine();
             if (saveOption == "1")
             {
-                dataAccess.SaveToJson(jsonPath);
+                dataAccess.SaveToJson(jsonPath, inventory.GetProducts());
                 Console.WriteLine("Inventory saved to JSON.");
             }
             else if (saveOption == "2")
             {
-                dataAccess.SaveToXml(xmlPath);
+                dataAccess.SaveToXml(xmlPath, inventory.GetProducts());
                 Console.WriteLine("Inventory saved to XML.");
             }
             else

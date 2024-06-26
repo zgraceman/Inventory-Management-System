@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InventoryManagementSystem
+namespace InventoryManagementSystem.Models
 {
     /// <summary>
     /// Represents an electronic device in the inventory, extending the <see cref="Product"/> class

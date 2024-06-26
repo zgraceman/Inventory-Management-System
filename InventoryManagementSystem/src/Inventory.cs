@@ -4,7 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Xml.Serialization;
-using InventoryManagementSystem.src;
+using InventoryManagementSystem.Models;
 
 namespace InventoryManagementSystem
 {

@@ -1,4 +1,7 @@
 ﻿using System;
+using InventoryManagementSystem.DataAccess;
+using InventoryManagementSystem.Models;
+
 namespace InventoryManagementSystem
 {
     /// <summary>

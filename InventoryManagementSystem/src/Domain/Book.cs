@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InventoryManagementSystem
+namespace InventoryManagementSystem.Models
 {
     /// <summary>
     /// Represents a Book, inheriting from the Product class, with additional property Author.

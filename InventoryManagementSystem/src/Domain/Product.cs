@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace InventoryManagementSystem
+namespace InventoryManagementSystem.Models
 {
     /// <summary>
     /// Represents the base class for products within the inventory system. This class

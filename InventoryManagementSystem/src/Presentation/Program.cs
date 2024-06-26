@@ -1,4 +1,4 @@
-﻿using InventoryManagementSystem;
+﻿//using InventoryManagementSystem;
 using System;
 
 namespace InventoryManagementSystem

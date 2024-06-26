@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace InventoryManagementSystem.src
+namespace InventoryManagementSystem.Models
 {
 
     public class Office

@@ -1,8 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
 using System.Xml.Serialization;
+using InventoryManagementSystem.Models;
 
-namespace InventoryManagementSystem
+namespace InventoryManagementSystem.DataAccess
 {
     public class InventoryDataAccess
     {

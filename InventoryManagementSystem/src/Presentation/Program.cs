@@ -1,5 +1,6 @@
 ﻿//using InventoryManagementSystem;
 using System;
+using InventoryManagementSystem.Models;
 
 namespace InventoryManagementSystem
 {

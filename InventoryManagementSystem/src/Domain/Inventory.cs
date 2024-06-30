@@ -4,9 +4,8 @@ using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Xml.Serialization;
-using InventoryManagementSystem.Models;
 
-namespace InventoryManagementSystem
+namespace InventoryManagementSystem.Models
 {
     /// <summary>
     /// Manages a collection of products within the inventory, including books and devices.
